@@ -145,7 +145,7 @@ rclone_progress_bar() {
     rm -f log
     touch log
     if [ -z "$new_filename" ]; then new_filename=$(basename "$file"); fi
-    rclone -P --checkers=32 --onedrive-chunk-size 60M copyto "$file" kamlesh:/"${u_folder}"/"$new_filename" | tee log >/dev/null || touch "$status_dir/failed" &
+    rclone -P --checkers=32 --drive-chunk-size 60M copyto "$file" kamlesh:/"${u_folder}"/"$new_filename" | tee log >/dev/null || touch "$status_dir/failed" &
     until [ -z "$(jobs -r)" ]; do
         if [ -f "$status_dir/failed" ]; then
             echo
