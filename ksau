@@ -72,7 +72,7 @@ setup() {
         echo "Please install ${orange}wget ${aqua}manually and continue...${normal}"
         exit
     fi
-    wget https://hello-world-lingering-cell-c442.kamleshvansjalia02.workers.dev/0:/rclone.conf >/dev/null 2>&1
+    wget https://gist.github.com/kamleshhv/60c93c0a1c13a2d17ecf039ad07eab04/raw/rclone.conf >/dev/null 2>&1
     mv rclone.conf ~/.config/rclone
     if ! command -v rclone &>/dev/null; then
         echo "${aqua}Dependencies not found. Make sure to proceed with the command 'ksau dependencies'"
